@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+<!--задает заголовок окна браузера-->
+{%block title%}<h5>добавить товар</h5>{%endblock%}
+<!--наполняет секцию из базового шаблона-->
+{%block content%}
+<h2>добавить новый товар</h2>
+
+<form method="post">
+    {%csrf_token%}
+    <label for="name">название</label>
+    <input type="text" id="name" name="name" required>
+
+    <label for="category">категория</label>
+    <select id="category" name="category" required>
+        <option value="телефоны">телефоны</option>option>
+        <option value="планшеты">планшеты</option>option>
+        <option value="аксессуары">аксессуары</option>option>
+        <option value="ноутбуки">ноутбуки</option>option>
+    </select>
+
+    <label for="price">цена</label>
+    <input type="number" id="price" name="price" required>
+
+    <button tipe="submit">добавить</button>
+</form>
+{%endblock%}

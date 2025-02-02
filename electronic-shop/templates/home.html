@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{%block content%}
+<h2>Лучший потому что свой</h2>
+
+<h2>Категории товаров</h2>
+<ul>
+    {%for category in categories%}
+    <li>
+        <a href="/models/{{category.name|urlencode}}/">{{category.name}}</a>
+    </li>
+    {%endfor%}
+</ul>
+{% endblock %}

@@ -1,0 +1,18 @@
+{%extends 'base.html'%}
+<!--задает заголовок окна браузера-->
+{%block title%}<h5>список товаров</h5>{%endblock%}
+<!--наполняет секцию из базового шаблона-->
+{%block content%}<h2>список товаров</h2>
+<!--навигация для товаров-->
+<ul>
+    {%for product in products%}
+    <li>
+        <strong>{{ product.name }}</strong> - {{ product.price }} руб.
+        <br>
+            Категория: {{ product.category.name }}
+        </br>
+        Добавлено: {{ product.created_at|date:"d M Y"}}
+    </li>
+    {%endfor%}
+</ul>
+{%endblock%}
